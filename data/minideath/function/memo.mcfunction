@@ -1,16 +1,8 @@
+
 #メモ用functionファイル
 
 
-
-
-
-
-
-#$damage @s $(test)
-
-
-
-summon minecraft:item_display ~ ~ ~ {item:{id:sunflower,components:{custom_model_data:1}},transformation:{left_rotation:{angle:0,axis:[1,0,0]},right_rotation:{angle:300,axis:[1,0,0]},translation:[0,0,0],scale:[10,10,10]},interpolation_duration:500,start_interpolation:0}
+#summon minecraft:item_display ~ ~ ~ {item:{id:sunflower,components:{custom_model_data:1}},transformation:{left_rotation:{angle:0,axis:[1,0,0]},right_rotation:{angle:300,axis:[1,0,0]},translation:[0,0,0],scale:[10,10,10]},interpolation_duration:500,start_interpolation:0}
 
 summon item_display ~ ~ ~ {item:{id:pufferfish},Tags:["kingyo"]}
 
@@ -21,7 +13,7 @@ summon item_display ~ ~ ~ {item:{id:pufferfish},Tags:["kingyo"]}
 #summon chest_minecart ~ ~ ~ {CustomDisplayTile:1b,DisplayOffset:16,DisplayState:{Name:"minecraft:player_head",Properties:{profile:'{name:nudon}'}}}
 
 
-summon chest_minecart ~ ~ ~ {CustomDisplayTile:1b,DisplayOffset:16,DisplayState:{Name:chest}}
+#summon chest_minecart ~ ~ ~ {CustomDisplayTile:1b,DisplayOffset:16,DisplayState:{Name:chest}}
 
 setblock ~ ~ ~ player_head{profile:{name:nudon}}
 
@@ -31,11 +23,11 @@ summon item_display ~ ~ ~ {item:{id:player_head,components:{profile:{name:nudon}
 
 give @s player_head[profile={name:CINDY2525}]
 
-summon chest_minecart ~ ~ ~ {CustomDisplayTile:1b}
+#summon chest_minecart ~ ~ ~ {CustomDisplayTile:1b}
 
 
 
-summon chest_minecart ~ ~ ~ {CustomDisplayTile:true,DisplayState:{Name:"air"}}
+#summon chest_minecart ~ ~ ~ {CustomDisplayTile:true,DisplayState:{Name:"air"}}
 
 summon item_display ~ ~ ~ {item:{id:player_head,components:{profile:{name:nudon}}},Tags:["head"],transformation:{right_rotation:{angle:1.57f,axis:[0,1,0]},scale:[1,1,1],left_rotation:[0f,0f,0f,1f],translation:[0f,0.8f,0f]}}
 
@@ -58,4 +50,3 @@ give @s milk_bucket[max_stack_size=99]
 
 
 give @s bundle[bundle_contents=[{id:"acacia_planks",count:99}]]
-

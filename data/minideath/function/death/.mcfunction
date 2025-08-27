@@ -59,9 +59,11 @@ data modify storage minideath:work death2[15] merge value {Slot:15}
 
 
 # 収納用チェストカートを召喚
-summon minecraft:chest_minecart ~ ~1 ~ {Tags:["md_entity","md_now","id1"],CustomDisplayTile:true,DisplayState:{Name:"air"},Invulnerable:true}
+summon chest_minecart ~ ~1 ~ {Tags:["md_entity","md_now","id1"],DisplayState:{Name:"barrier"},Invulnerable:true}
+
+
 # 1つで入り切らないなら2つ目も
-execute if data storage minideath:work death2[0] run summon minecraft:chest_minecart ~ ~ ~ {Tags:["md_entity","md_now","id2"],CustomDisplayTile:true,DisplayState:{Name:"air"},Invulnerable:true}
+execute if data storage minideath:work death2[0] run summon chest_minecart ~ ~ ~ {Tags:["md_entity","md_now","id2"],DisplayState:{Name:"barrier"},Invulnerable:true}
 
 # ストレージ上のアイテムデータをチェストカートに入れる
 data modify entity @e[type=minecraft:chest_minecart,limit=1,tag=md_now,tag=id1,sort=nearest] Items set from storage minideath:work death1
@@ -83,12 +85,9 @@ tag @e[type=minecraft:chest_minecart,limit=1,tag=md_now,sort=nearest] remove id2
 tag @e[type=minecraft:chest_minecart,limit=2,tag=md_now,sort=nearest] add md_chest
 tag @e[type=minecraft:chest_minecart,limit=2,tag=md_now,sort=nearest] remove md_now
 
-
-
 #リスポン位置変更＆スペクテイターで復活
 spawnpoint @s ~ ~ ~ ~
 gamemode spectator @s
-
 
 
 # 死亡フラグ解除
