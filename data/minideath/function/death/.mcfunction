@@ -1,6 +1,6 @@
 # 死亡時実行
 
-#他データパックの死亡処理をまず行う
+#他データパックの死亡処理をまず行う(飛び散るアイテムの消去などに使う)
 function #minideath:death
 
 
@@ -85,10 +85,11 @@ tag @e[type=minecraft:chest_minecart,limit=1,tag=md_now,sort=nearest] remove id2
 tag @e[type=minecraft:chest_minecart,limit=2,tag=md_now,sort=nearest] add md_chest
 tag @e[type=minecraft:chest_minecart,limit=2,tag=md_now,sort=nearest] remove md_now
 
-#リスポン位置変更＆スペクテイターで復活
-spawnpoint @s ~ ~ ~ ~
-gamemode spectator @s
 
 
 # 死亡フラグ解除
 advancement revoke @s only minideath:death
+
+
+#死亡後の処理 (doImmediateRespawn true 時や、リスポン地点、ゲームモードなどを変更したい場合に。)
+function #minideath:after_death

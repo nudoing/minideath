@@ -1,0 +1,14 @@
+{
+  "title": "しんだらトロッコ",
+  "type": "multi_action",
+  "columns": 1,
+  "actions": [
+    {
+      "label": "トロッコをけす",
+      "action": {
+        "type": "run_command",
+        "command": "/function minideath:reset"
+      }
+    }
+  ]
+}
